@@ -9,7 +9,7 @@
 #000000 #000000;
 #X obj 93 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 306 119 DrumLoops;
+#X obj 306 119 Drum_Loops;
 #X obj 242 42 hradio 15 1 0 5 empty empty empty 0 -8 0 10 #fcfcfc #000000
 #000000 0;
 #X obj 309 72 r four_bar;
