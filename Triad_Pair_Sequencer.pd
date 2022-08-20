@@ -1,4 +1,4 @@
-#N canvas 321 106 1599 990 12;
+#N canvas 321 104 1599 990 12;
 #X symbolatom 562 95 10 0 0 0 - - - 0;
 #X symbolatom 656 95 10 0 0 0 - - - 0;
 #X obj 560 229 list append;
@@ -106,6 +106,7 @@
 #X connect 0 12 15 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
+#X connect 2 0 21 0;
 #X connect 3 0 22 0;
 #X connect 4 0 1 0;
 #X connect 5 0 1 0;
