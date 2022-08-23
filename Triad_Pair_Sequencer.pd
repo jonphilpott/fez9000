@@ -1,71 +1,71 @@
-#N canvas 321 104 1599 990 12;
-#X symbolatom 562 95 10 0 0 0 - - - 0;
-#X symbolatom 656 95 10 0 0 0 - - - 0;
-#X obj 560 229 list append;
-#X obj 584 273 unpack f f f f f f;
-#X obj 568 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#N canvas 2241 414 1599 990 12;
+#X symbolatom 584 379 10 0 0 0 - - - 0;
+#X symbolatom 678 379 10 0 0 0 - - - 0;
+#X obj 582 513 list append;
+#X obj 606 557 unpack f f f f f f;
+#X obj 590 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 596 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#X obj 618 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 678 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#X obj 700 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 623 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#X obj 645 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 705 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#X obj 727 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 651 335 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
+#X obj 673 619 vradio 15 1 0 12 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X obj 21 334 f;
-#X obj 21 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 43 618 f;
+#X obj 43 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 108 334 f;
-#X obj 108 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 130 618 f;
+#X obj 130 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 196 334 f;
-#X obj 196 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 218 618 f;
+#X obj 218 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 279 334 f;
-#X obj 279 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 301 618 f;
+#X obj 301 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 362 334 f;
-#X obj 362 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 384 618 f;
+#X obj 384 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 453 334 f;
-#X obj 452 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 475 618 f;
+#X obj 474 531 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 21 175 sel 0 1 2 3 4 5;
-#X floatatom 22 376 5 0 0 0 - - - 0;
-#X floatatom 25 470 5 0 0 0 - - - 0;
-#X obj 94 139 Random_Ring 6 16;
-#X obj 95 99 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 21 22 inlet;
-#X obj 562 12 inlet;
-#X obj 952 11 inlet;
-#X obj 26 519 outlet;
-#X obj 560 182 Triads;
-#X obj 650 181 Triads;
-#X obj 39 247 r \$0-1/6;
-#X obj 127 247 r \$0-2/6;
-#X obj 214 247 r \$0-3/6;
-#X obj 296 247 r \$0-4/6;
-#X obj 382 247 r \$0-5/6;
-#X obj 471 247 r \$0-6/6;
-#X obj 74 409 r \$0-root;
-#X obj 952 42 s \$0-root;
-#X obj 568 541 s \$0-1/6;
-#X obj 596 568 s \$0-2/6;
-#X obj 622 596 s \$0-3/6;
-#X obj 650 623 s \$0-4/6;
-#X obj 679 651 s \$0-5/6;
-#X obj 705 678 s \$0-6/6;
-#X obj 25 446 + 0;
-#X floatatom 59 275 5 0 0 0 - - - 0;
-#X floatatom 147 275 5 0 0 0 - - - 0;
-#X floatatom 236 275 5 0 0 0 - - - 0;
-#X floatatom 317 275 5 0 0 0 - - - 0;
-#X floatatom 403 275 5 0 0 0 - - - 0;
-#X floatatom 494 275 5 0 0 0 - - - 0;
+#X obj 43 459 sel 0 1 2 3 4 5;
+#X floatatom 44 660 5 0 0 0 - - - 0;
+#X floatatom 47 754 5 0 0 0 - - - 0;
+#X obj 116 423 Random_Ring 6 16;
+#X obj 117 383 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 43 306 inlet;
+#X obj 584 296 inlet;
+#X obj 974 295 inlet;
+#X obj 48 803 outlet;
+#X obj 582 466 Triads;
+#X obj 672 465 Triads;
+#X obj 61 531 r \$0-1/6;
+#X obj 149 531 r \$0-2/6;
+#X obj 236 531 r \$0-3/6;
+#X obj 318 531 r \$0-4/6;
+#X obj 404 531 r \$0-5/6;
+#X obj 493 531 r \$0-6/6;
+#X obj 96 693 r \$0-root;
+#X obj 974 326 s \$0-root;
+#X obj 590 825 s \$0-1/6;
+#X obj 618 852 s \$0-2/6;
+#X obj 644 880 s \$0-3/6;
+#X obj 672 907 s \$0-4/6;
+#X obj 701 935 s \$0-5/6;
+#X obj 727 962 s \$0-6/6;
+#X obj 47 730 + 0;
+#X floatatom 81 559 5 0 0 0 - - - 0;
+#X floatatom 169 559 5 0 0 0 - - - 0;
+#X floatatom 258 559 5 0 0 0 - - - 0;
+#X floatatom 339 559 5 0 0 0 - - - 0;
+#X floatatom 425 559 5 0 0 0 - - - 0;
+#X floatatom 516 559 5 0 0 0 - - - 0;
 #N canvas 0 281 823 502 TriadSelect 0;
 #X obj 348 136 sel 0 1 2 3 4 5 6 7 8 9 10 11 12;
 #X obj 285 272 unpack s s;
@@ -125,20 +125,24 @@
 #X connect 18 0 16 0;
 #X connect 19 0 18 0;
 #X connect 20 0 16 0;
-#X restore 561 48 pd TriadSelect;
-#X text 613 11 < inlet \, f 0-12 \, select one of 13 triad pairs;
-#X obj 21 57 route float;
-#X obj 21 93 % 6;
-#X text 68 20 < bang: random note from 16 note ring \, f: note# \,
+#X restore 583 332 pd TriadSelect;
+#X text 635 295 < inlet \, f 0-12 \, select one of 13 triad pairs;
+#X obj 43 341 route float;
+#X obj 43 377 % 6;
+#X text 90 304 < bang: random note from 16 note ring \, f: note# \,
 mod 6;
-#X obj 132 59 r \$0-reset-ring;
-#X msg 132 92 reset;
-#X text 1000 9 < inlet \, change root note;
-#X obj 1193 11 inlet;
-#X text 1241 9 < inlet \, reset random ring;
-#X obj 1193 42 s \$0-reset-ring;
+#X obj 154 343 r \$0-reset-ring;
+#X msg 154 376 reset;
+#X text 1022 293 < inlet \, change root note;
+#X obj 1215 295 inlet;
+#X text 1263 293 < inlet \, reset random ring;
+#X obj 1215 326 s \$0-reset-ring;
+#X symbolatom 108 132 5 0 0 0 - - - 0;
+#X symbolatom 161 132 5 0 0 0 - - - 0;
 #X connect 0 0 31 0;
+#X connect 0 0 65 0;
 #X connect 1 0 32 0;
+#X connect 1 0 66 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 1 5 0;
@@ -201,3 +205,4 @@ mod 6;
 #X connect 59 0 60 0;
 #X connect 60 0 25 0;
 #X connect 62 0 64 0;
+#X coords 0 -1 1 1 150 60 1 100 100;
