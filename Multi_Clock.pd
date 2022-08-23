@@ -1,4 +1,4 @@
-#N canvas 2119 423 832 668 12;
+#N canvas 2647 652 832 668 12;
 #X obj 193 15 inlet;
 #X obj 131 166 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -33,17 +33,33 @@
 #X obj 213 343 Bang_Divider;
 #X obj 295 384 Bang_Divider;
 #X obj 56 168 outlet;
-#X connect 0 0 2 0;
+#X obj 517 394 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 559 423 del;
+#X obj 517 471 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 578 320 * 1.75;
+#X floatatom 212 211 5 0 0 0 - - - 0;
+#X floatatom 616 356 5 0 0 0 - - - 0;
+#X obj 519 610 outlet;
+#X text 114 639 1/8th \, 1/4 note \, 1/2 note \, 1 bar \, 2 bar \,
+4 bar \, 8 bar \, swing 1/8th;
+#X msg 146 86 1;
+#X obj 144 50 t b f;
+#X connect 0 0 35 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 0 25 0;
 #X connect 4 0 5 1;
+#X connect 4 0 29 0;
+#X connect 4 0 30 0;
 #X connect 5 0 15 0;
 #X connect 6 0 1 0;
-#X connect 14 0 2 0;
+#X connect 14 0 35 0;
 #X connect 15 0 16 0;
 #X connect 15 1 17 0;
+#X connect 15 1 26 0;
 #X connect 15 2 23 0;
 #X connect 16 0 7 0;
 #X connect 17 0 8 0;
@@ -58,3 +74,12 @@
 #X connect 24 0 20 0;
 #X connect 24 1 21 0;
 #X connect 24 2 22 0;
+#X connect 26 0 27 0;
+#X connect 26 0 28 0;
+#X connect 27 0 28 0;
+#X connect 28 0 32 0;
+#X connect 29 0 27 1;
+#X connect 29 0 31 0;
+#X connect 34 0 1 0;
+#X connect 35 0 34 0;
+#X connect 35 1 2 0;
