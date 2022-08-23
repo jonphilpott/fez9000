@@ -1,35 +1,35 @@
-#N canvas 1497 865 548 456 12;
-#X obj 70 96 Multi_Clock;
+#N canvas 1669 1020 548 456 12;
+#X obj 21 100 Multi_Clock;
 #X floatatom 149 12 5 0 0 0 - - - 0;
 #X obj 127 37 t b f;
 #X obj 94 70 s reset;
-#X obj 58 148 * 16;
-#X obj 58 192 s four_bar;
-#X obj 143 149 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 60 246 * 16;
+#X obj 60 290 s four_bar;
+#X obj 145 247 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 93 124 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 95 222 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 306 119 Drum_Loops;
+#X obj 324 164 Drum_Loops;
 #X obj 243 42 hradio 15 1 0 5 empty empty empty 0 -8 0 10 #fcfcfc #000000
 #000000 0;
 #X obj 309 72 r four_bar;
 #X obj 358 22 r reset;
-#X obj 183 188 s reset;
-#X obj 364 248 dac~;
+#X obj 185 286 s reset;
+#X obj 382 293 dac~;
 #X floatatom 60 28 5 0 0 0 - - - 0;
-#X obj 131 296 random 5;
-#X obj 132 334 s loop_select;
+#X obj 133 394 random 5;
+#X obj 134 432 s loop_select;
 #X obj 242 4 r loop_select;
-#X obj 204 131 spigot;
+#X obj 206 229 spigot;
 #X obj 244 86 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 130 263 spigot;
-#X obj 170 233 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 132 361 spigot;
+#X obj 172 331 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X text 190 231 switch loop;
+#X text 192 329 switch loop;
 #X obj 418 60 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X floatatom 17 217 5 0 0 0 - - - 0;
+#X floatatom 19 315 5 0 0 0 - - - 0;
 #X connect 0 0 4 0;
 #X connect 0 3 7 0;
 #X connect 0 7 6 0;

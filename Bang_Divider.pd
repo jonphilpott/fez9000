@@ -1,23 +1,29 @@
-#N canvas 1654 1511 661 482 12;
-#X obj 38 41 inlet;
-#X obj 107 179 f;
-#X obj 144 179 + 1;
-#X obj 44 283 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 108 286 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#N canvas 1269 1529 1049 482 12;
+#X obj 358 41 inlet;
+#X obj 427 179 f;
+#X obj 464 179 + 1;
+#X obj 364 283 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 43 355 outlet;
-#X obj 108 356 outlet;
-#X obj 182 180 % 4;
-#X obj 193 286 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 428 286 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 108 224 sel 0 1 2 3;
-#X obj 192 356 outlet;
-#X text 95 41 < bang input;
-#X text 41 389 repeat of input \, div/2 \, div/4 input is repeated
+#X obj 363 355 outlet;
+#X obj 428 356 outlet;
+#X obj 502 180 % 4;
+#X obj 513 286 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 428 224 sel 0 1 2 3;
+#X obj 512 356 outlet;
+#X text 415 41 < bang input;
+#X text 362 389 repeat of input \, div/2 \, div/4 input is repeated
 to make cascades easier to arrange;
-#X text 203 40 simple counter based clock divider does /2 and /4 for
+#X text 523 40 simple counter based clock divider does /2 and /4 for
 simplicity's sake;
+#X obj 105 135 bng 15 250 50 0 empty empty 1 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 134 135 bng 15 250 50 0 empty empty /2 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 168 135 bng 15 250 50 0 empty empty /4 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -25,9 +31,13 @@ simplicity's sake;
 #X connect 2 0 1 1;
 #X connect 2 0 7 0;
 #X connect 3 0 5 0;
+#X connect 3 0 14 0;
 #X connect 4 0 6 0;
+#X connect 4 0 15 0;
 #X connect 7 0 1 1;
 #X connect 8 0 10 0;
+#X connect 8 0 16 0;
 #X connect 9 0 4 0;
 #X connect 9 0 8 0;
 #X connect 9 2 4 0;
+#X coords 0 -1 1 1 100 60 1 100 100;
