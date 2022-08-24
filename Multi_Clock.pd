@@ -1,4 +1,4 @@
-#N canvas 2327 528 1173 1002 12;
+#N canvas 799 391 1180 1002 12;
 #X obj 451 29 inlet;
 #X obj 389 180 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -16,19 +16,19 @@
 #X obj 707 625 outlet;
 #X floatatom 517 46 5 0 0 0 - - - 0;
 #X obj 372 295 Bang_Divider;
-#X obj 377 591 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 374 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 432 590 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 419 590 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 487 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 542 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 531 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 596 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 655 593 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 640 593 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 710 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 688 592 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 485 373 Bang_Divider;
 #X obj 594 448 Bang_Divider;

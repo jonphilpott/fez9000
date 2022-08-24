@@ -1,0 +1,273 @@
+#N canvas 1209 614 1337 1240 12;
+#N canvas 2146 1192 1087 772 oscope 0;
+#X obj 708 403 tabwrite~ array1;
+#X obj 734 304 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 729 370 metro 100;
+#X obj 727 258 loadbang;
+#X obj 856 252 inlet~;
+#N canvas 266 291 450 278 (subpatch) 0;
+#X array array1 100 float 5;
+#A 0 -0.0367935 -0.0345999 -0.032258 -0.0291183 -0.0263789 -0.0226627
+-0.0182132 -0.0140797 -0.0095709 -0.00402258 0.00119368 0.00560896
+0.00991343 0.013322 0.016155 0.0191818 0.0223795 0.0247934 0.0273623
+0.0295487 0.0312255 0.0323113 0.0333582 0.0345083 0.0359574 0.036979
+0.0380943 0.0383676 0.0377289 0.0355766 0.033062 0.0305642 0.0274689
+0.0239984 0.0204408 0.016593 0.0128431 0.00905319 0.00529682 0.00225509
+-0.000257521 -0.00263304 -0.00536647 -0.00898826 -0.0132957 -0.0180325
+-0.023487 -0.0289331 -0.033095 -0.0360646 -0.038592 -0.0398961 -0.041086
+-0.0413428 -0.0409224 -0.0402611 -0.0396919 -0.0386191 -0.0367635 -0.0346648
+-0.0332025 -0.0314056 -0.0294135 -0.0278178 -0.0255644 -0.0223613 -0.0194841
+-0.0164242 -0.0126095 -0.00855092 -0.0047583 -0.00062708 0.00324154
+0.00676734 0.0104579 0.0135083 0.0160314 0.0186281 0.0208623 0.0231449
+0.0244958 0.0258972 0.0276797 0.029941 0.0316861 0.0334657 0.0348674
+0.0351366 0.0343442 0.0334749 0.0321949 0.0305157 0.0285324 0.0263472
+0.0242733 0.0215788 0.0177528 0.0136225 0.0100397 0.00750089;
+#X coords 0 1 99 -1 200 200 1 0 0;
+#X restore 119 133 graph;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X coords 0 -1 1 1 250 250 1 100 100;
+#X restore 116 952 pd oscope;
+#N canvas 1726 922 1397 699 WaveFolder 0;
+#X obj 108 116 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 657 462 * -1;
+#X obj 131 116 vsl 15 100 -1 0 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 337 447 expr~ if ($v1 > $f2 \, 2*$f2 - $v1 \, $v1);
+#X obj 353 495 expr~ if ($v1 < $f2 \, 2*$f2 - $v1 \, $v1);
+#X obj 20 16 inlet~;
+#X obj 360 552 outlet~;
+#X obj 84 13 inlet;
+#X connect 0 0 1 0;
+#X connect 0 0 3 1;
+#X connect 1 0 2 0;
+#X connect 1 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;
+#X coords 0 -1 1 1 50 128 1 100 100;
+#X restore 531 351 pd WaveFolder;
+#N canvas 1992 1112 906 850 RandomScale 0;
+#X obj 351 266 metro 1000;
+#X obj 364 215 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 360 173 loadbang;
+#X obj 281 315 random 6;
+#X obj 284 473 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 342 488 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 395 489 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 441 490 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 484 488 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 535 489 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 327 360 5 0 0 0 - - - 0;
+#X obj 293 404 sel 0 1 2 3 4 5;
+#X msg 282 507 0;
+#X msg 342 508 2;
+#X msg 396 509 3;
+#X msg 441 510 6;
+#X msg 484 508 7;
+#X msg 535 509 9;
+#X obj 315 644 +;
+#X obj 151 167 hsl 128 15 0 127 0 0 empty empty root -2 -8 0 10 #00faff
+#000000 #000000 0 1;
+#X floatatom 314 744 5 0 0 0 - - - 0;
+#X obj 335 803 outlet;
+#X obj 91 545 inlet;
+#X obj 146 125 hsl 128 15 100 1000 0 0 empty empty interval -2 -8 0
+10 #c6feff #000000 #000000 0 1;
+#X obj 452 20 loadbang;
+#X msg 453 65 36;
+#X obj 43 23 loadbang;
+#X msg 44 68 500;
+#X obj 486 743 outlet;
+#X obj 322 690 t f b;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
+#X connect 11 0 4 0;
+#X connect 11 1 5 0;
+#X connect 11 2 6 0;
+#X connect 11 3 7 0;
+#X connect 11 4 8 0;
+#X connect 11 5 9 0;
+#X connect 12 0 18 0;
+#X connect 13 0 18 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 18 0 29 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 0;
+#X connect 22 0 19 0;
+#X connect 23 0 0 1;
+#X connect 24 0 25 0;
+#X connect 25 0 19 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X connect 29 0 20 0;
+#X connect 29 1 28 0;
+#X coords 0 -1 1 1 250 100 2 100 100;
+#X restore 528 27 pd RandomScale;
+#N canvas 2148 942 1535 970 WaveFolderLFO 0;
+#X obj 471 521 snapshot~;
+#X obj 323 479 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 379 479 metro 10;
+#X obj 470 482 osc~ 0.25;
+#X obj 130 157 hsl 128 15 0.1 5 0 0 empty empty LFO\\\ SPEED -2 -8
+0 10 #c6ffc7 #000000 #000000 0 1;
+#X obj 221 489 loadbang;
+#X obj 360 627 expr 0.5+abs($f1)*$f2;
+#X obj 133 196 hsl 128 15 0.25 0.8 0 0 empty empty LFO\\\ DEPTH -2
+-8 0 10 #00ff04 #000000 #000000 0 1;
+#X obj 381 712 outlet;
+#X obj 514 177 loadbang;
+#X msg 401 204 0.3;
+#X msg 400 162 1;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;
+#X connect 9 0 11 0;
+#X connect 9 0 10 0;
+#X connect 11 0 4 0;
+#X coords 0 -1 1 1 250 125 1 100 100;
+#X restore 818 28 pd WaveFolderLFO;
+#N canvas 1919 126 1142 966 Voice 0;
+#X obj 453 354 mtof;
+#X obj 343 407 phasor~ 440;
+#X obj 270 464 osc~;
+#X obj 297 682 +~;
+#X obj 379 461 expr~ -1+(2*$v1);
+#X obj 388 58 inlet;
+#X obj 328 877 outlet~;
+#X obj 112 134 hsl 128 15 0 1 0 0 empty empty Voice\\\ Cross\\\ Fade
+-2 -8 0 10 #feffc6 #000000 #000000 0 1;
+#X floatatom 62 257 5 0 0 0 - - - 0;
+#X floatatom 207 260 5 0 0 0 - - - 0;
+#X obj 211 229 expr 1-$f1;
+#X obj 287 525 *~;
+#X obj 392 529 *~;
+#X obj 162 23 loadbang;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 11 0;
+#X connect 3 0 6 0;
+#X connect 4 0 12 0;
+#X connect 5 0 0 0;
+#X connect 7 0 8 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 1;
+#X connect 9 0 12 1;
+#X connect 10 0 9 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 1;
+#X connect 13 0 7 0;
+#X coords 0 -1 1 1 150 60 1 100 100;
+#X restore 529 196 pd Voice;
+#N canvas 2045 272 1223 937 Output 0;
+#X obj 673 875 dac~;
+#X obj 633 793 *~;
+#X obj 175 151 vsl 15 128 0 0.5 0 0 empty empty output\\\ volume 0
+-9 0 10 #c6feff #000000 #000000 0 1;
+#X obj 585 576 rev1~;
+#X obj 269 152 vsl 15 128 1 127 0 0 empty empty reverb\\\ time 0 -9
+0 10 #c6feff #000000 #000000 0 1;
+#X obj 920 260 inlet~;
+#X msg 475 109 1;
+#X obj 534 69 loadbang;
+#X obj 554 867 outlet~;
+#X obj 181 350 hsl 128 15 0 1 0 0 empty empty reverb\\\ wet/dry\\\ crossfade
+-2 -8 0 10 #c6ffc7 #000000 #000000 0 1;
+#X floatatom 115 579 5 0 0 0 - - - 0;
+#X floatatom 260 582 5 0 0 0 - - - 0;
+#X obj 264 551 expr 1-$f1;
+#X obj 551 668 *~;
+#X obj 656 670 *~;
+#X obj 632 717 +~;
+#X obj 118 23 loadbang;
+#X msg 59 63 0.25;
+#X connect 1 0 8 0;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 1;
+#X connect 3 0 14 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 5 0 13 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 13 1;
+#X connect 11 0 14 1;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 16 0 17 0;
+#X connect 17 0 2 0;
+#X connect 17 0 9 0;
+#X coords 0 -1 1 1 300 300 1 100 100;
+#X restore 116 624 pd Output;
+#N canvas 2785 830 810 818 Envelope 0;
+#X obj 505 240 inlet;
+#X obj 378 383 inlet~;
+#X obj 385 687 outlet~;
+#X obj 384 621 *~;
+#X obj 504 479 line;
+#X floatatom 469 550 5 0 0 0 - - - 0;
+#X obj 113 136 hsl 128 15 0 1 0 0 empty empty envelope\\\ output -2
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 591 309 delay 100;
+#X msg 595 371 0 200;
+#X msg 505 309 1 100;
+#X connect 0 0 9 0;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X coords 0 -1 1 1 250 60 1 100 100;
+#X restore 531 501 pd Envelope;
+#X obj 366 575 Tapeish;
+#X obj 396 492 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 2 1 6 1;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
