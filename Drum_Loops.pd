@@ -1,4 +1,4 @@
-#N canvas 2277 449 1544 1107 12;
+#N canvas 376 25 1544 1062 12;
 #X obj 525 162 phasor~;
 #X obj 473 195 *~;
 #X obj 475 287 tabread4~ dl-loop1;
@@ -24,7 +24,7 @@
 #X obj 355 258 s 3/5;
 #X obj 376 224 s 4/5;
 #X obj 401 257 s 5/5;
-#X obj 467 150 r s_len;
+#X obj 538 190 r s_len;
 #X obj 442 645 soundfiler;
 #X obj 443 684 f;
 #X floatatom 443 718 5 0 0 0 - - - 0;
@@ -83,6 +83,7 @@
 #000000 0;
 #X obj 254 134 bng 40 250 50 0 empty empty empty 17 7 0 10 #ff0400
 #404040 #000000;
+#X text 75 817 TODO: don't reload loop if the loop is the same.;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 39 0;
