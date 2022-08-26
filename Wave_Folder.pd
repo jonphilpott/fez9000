@@ -1,0 +1,19 @@
+#N canvas 1020 1045 976 673 12;
+#X obj 108 116 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 657 462 * -1;
+#X obj 131 116 vsl 15 100 -1 0 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 337 447 expr~ if ($v1 > $f2 \, 2*$f2 - $v1 \, $v1);
+#X obj 353 495 expr~ if ($v1 < $f2 \, 2*$f2 - $v1 \, $v1);
+#X obj 20 16 inlet~;
+#X obj 360 552 outlet~;
+#X obj 84 13 inlet;
+#X connect 0 0 1 0;
+#X connect 0 0 3 1;
+#X connect 1 0 2 0;
+#X connect 1 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X connect 7 0 0 0;

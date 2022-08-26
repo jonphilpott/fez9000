@@ -1,0 +1,20 @@
+#N canvas 2045 1289 450 458 12;
+#X obj 131 184 Counter_Latch;
+#X floatatom 133 367 5 0 0 0 - - - 0;
+#X obj 75 70 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc #000000
+#000000 0;
+#X obj 281 56 metro 500;
+#X obj 284 25 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 292 145 5 0 0 0 - - - 0;
+#X obj 214 362 print NEW_dedup_out;
+#X obj 150 297 Dedup;
+#X obj 271 109 Counter 4;
+#X connect 0 0 7 0;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 1;
+#X connect 7 0 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;

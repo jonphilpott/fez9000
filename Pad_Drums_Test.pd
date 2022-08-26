@@ -1,0 +1,71 @@
+#N canvas 1666 583 1824 1317 12;
+#X obj 1128 1090 dac~;
+#X obj 920 974 lop~ 100;
+#X floatatom 678 416 5 0 0 0 - - - 0;
+#X obj 882 651 phasor~;
+#X obj 862 496 mtof;
+#X obj 862 470 - 24;
+#X obj 785 1071 hsl 128 15 10 500 0 0 empty empty empty -2 -8 0 10
+#fcfcfc #000000 #000000 0 1;
+#X obj 1078 1039 rev1~;
+#X obj 1149 995 hsl 128 15 0 10 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 366 509 Dual_Wavetable_Voice;
+#X obj 706 883 Wave_Folder;
+#X obj 844 819 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 146 506 Dual_Wavetable_Voice;
+#X obj 518 407 + 12;
+#X obj 989 1013 Tapeish;
+#X obj 1036 963 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 1113 379 Counter 2;
+#X obj 1110 442 sel 0 1;
+#X obj 1390 234 Multi_Clock;
+#X obj 1393 179 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 1578 176 5 0 0 0 - - - 0;
+#X obj 1470 554 Drum_Loops;
+#X obj 1459 386 * 16;
+#X obj 1352 513 hradio 15 1 0 8 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X msg 1155 527 64;
+#X msg 1096 515 62;
+#X obj 694 820 *~ 0.8;
+#X obj 1010 1047 *~;
+#X obj 1158 933;
+#X obj 1227 920 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X connect 1 0 14 0;
+#X connect 2 0 5 0;
+#X connect 2 0 9 0;
+#X connect 2 0 13 0;
+#X connect 3 0 26 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 1;
+#X connect 7 0 0 0;
+#X connect 7 0 0 1;
+#X connect 8 0 7 1;
+#X connect 9 0 26 0;
+#X connect 10 0 1 0;
+#X connect 11 0 10 1;
+#X connect 12 0 26 0;
+#X connect 13 0 12 0;
+#X connect 14 0 27 0;
+#X connect 15 0 14 1;
+#X connect 16 0 17 0;
+#X connect 17 0 25 0;
+#X connect 17 1 24 0;
+#X connect 18 0 22 0;
+#X connect 18 5 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 1;
+#X connect 21 0 14 0;
+#X connect 22 0 21 1;
+#X connect 23 0 21 0;
+#X connect 24 0 2 0;
+#X connect 25 0 2 0;
+#X connect 26 0 10 0;
+#X connect 27 0 7 0;
+#X connect 29 0 27 1;

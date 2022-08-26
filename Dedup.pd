@@ -1,0 +1,35 @@
+#N canvas 1024 842 1206 1058 12;
+#X obj 159 386 f, f 11;
+#X obj 292 245 ==;
+#X obj 110 112 t b f, f 29;
+#X obj 290 315 sel 0;
+#X floatatom 110 82 5 0 0 0 - - - 0;
+#X obj 109 14 inlet;
+#X obj 158 489 outlet;
+#X text 329 246 < A;
+#X text 245 385 < B;
+#X text 85 171 C >;
+#X floatatom 158 460 5 0 0 0 - - - 0;
+#X obj 110 171 f -1;
+#X text 459 74 this one really hurt my brain number comes in and 1)
+store the number in rhs of A (==) and output box B (f) 2) then trigger
+the output of outbox C 3) this causes a comparison of what came out
+of C (which should be the last number output) 4) if they are not equal
+\, trigger output of box B which also updates the value stored in C
+\, but doesnt output it only initially box C is initialized to -1 \,
+this means it wont output the first number it receives if that number
+is -1;
+#X obj 266 488 outlet;
+#X text 336 494 < outlet if its the same;
+#X connect 0 0 10 0;
+#X connect 0 0 11 1;
+#X connect 1 0 3 0;
+#X connect 2 0 11 0;
+#X connect 2 1 1 1;
+#X connect 2 1 0 1;
+#X connect 3 0 0 0;
+#X connect 3 1 13 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 10 0 6 0;
+#X connect 11 0 1 0;

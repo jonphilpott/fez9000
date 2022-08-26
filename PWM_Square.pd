@@ -1,0 +1,20 @@
+#N canvas 1804 837 757 528 12;
+#X obj 239 30 inlet;
+#X obj 239 166 expr~ $v1 > $v2;
+#X obj 239 107 phasor~;
+#X obj 411 107 *~ 0.4;
+#X obj 411 136 +~ 0.5;
+#X obj 411 78 osc~ 0;
+#X obj 240 241 outlet~;
+#X obj 411 27 inlet;
+#X obj 516 27 inlet;
+#X text 142 352 inlets: 1 frequency 2 pwm lfo speed 3 pwm lfo depth
+;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 1;
+#X connect 5 0 3 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 1;
