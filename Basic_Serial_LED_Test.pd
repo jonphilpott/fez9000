@@ -1,0 +1,26 @@
+#N canvas 894 265 692 449 12;
+#X obj 64 341 comport;
+#X msg 142 181 devices;
+#X msg 21 134 devicename /dev/tty.usbserial-0001 9600;
+#X floatatom 488 228 5 0 0 0 - - - 0;
+#X msg 240 216 close;
+#X msg 390 278 2 \$1 0 255;
+#X obj 485 33 r BN;
+#X msg 321 93 1 0 \$1 255;
+#X msg 276 368 1 \$1 0 255;
+#X obj 316 334 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X msg 204 44 1 5 \$1 255;
+#X obj 204 3 r VU;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
