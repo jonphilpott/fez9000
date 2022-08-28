@@ -28,8 +28,8 @@ void setup()
 {
   bzero(Params, sizeof(Params));
   FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
+  // Cap power usage to 1.5 A
   FastLED.setMaxPowerInVoltsAndMilliamps(5, 1500);
-
   Serial.begin(9600);
 }
 
@@ -37,7 +37,7 @@ void setup()
 
 void handleBeat()
 {
-  if (BeatNumber == 0 || BeatNumber == 4 || BeatNumber == 8 || BeatNumber == 12) {
+  if ((BeatNumber % 4) == 0) {
     for (int i = BLAH_SECTION_START ; i < NUM_LEDS ; i++) {
       leds[i] = 0x220000;
     }
@@ -98,12 +98,14 @@ void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 {
   switch (cmd) {
     case COMMAND_SET_PARAM:
+      // wrap around parameters, cap args to 5 bits
       Params[arg1 % 10] = arg2 & 0x1F;
       updateParams();
       break;
     case COMMAND_BEAT:
       LastCommandAt = millis();
       Started = 1;
+      // cap beats to 16
       BeatNumber = arg1 & 0xF;
       handleBeat();
       break;
@@ -141,7 +143,7 @@ void loop() {
     EVERY_N_MILLISECONDS( 20 ) {
       gHue++;
       for (int i = BLAH_SECTION_START; i < NUM_LEDS; i++) {
-        leds[i] -= CHSV( gHue * 0xF0, 255, 40);
+        leds[i] -= CHSV( gHue & 0xF0, 255, 40);
       }
     }
 
