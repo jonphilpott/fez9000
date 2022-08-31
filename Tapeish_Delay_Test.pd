@@ -1,0 +1,54 @@
+#N canvas 1013 641 1108 820 12;
+#X obj 418 197 Basic_Voice;
+#X floatatom 420 134 5 0 0 0 - - - 0;
+#X obj 498 128 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 465 240 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 425 272 *~;
+#X obj 426 310 delwrite~ lol 10000;
+#X msg 535 441 500;
+#X obj 537 496 delread4~ lol 1000;
+#X obj 677 494 *~ 0.4;
+#X obj 547 597 Tapeish;
+#X obj 597 561 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 557 675 dac~;
+#X obj 104 155 sel 0 1 2 3;
+#X msg 91 192 63;
+#X msg 134 191 65;
+#X msg 178 192 68;
+#X msg 225 194 70;
+#X obj 132 304 s n;
+#X obj 124 16 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 121 127 random 4;
+#X obj 138 77 t b b;
+#X obj 441 80 r n;
+#X obj 123 48 metro 800;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 4 1;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 5 0;
+#X connect 9 0 11 0;
+#X connect 9 0 11 1;
+#X connect 10 0 9 1;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 17 0;
+#X connect 18 0 22 0;
+#X connect 19 0 12 0;
+#X connect 20 0 2 0;
+#X connect 20 1 19 0;
+#X connect 21 0 1 0;
+#X connect 22 0 20 0;
