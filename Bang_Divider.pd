@@ -16,7 +16,7 @@
 #X text 415 41 < bang input;
 #X text 362 389 repeat of input \, div/2 \, div/4 input is repeated
 to make cascades easier to arrange;
-#X text 523 40 simple counter based clock divider does /2 and /4 for
+#X text 576 212 simple counter based clock divider does /2 and /4 for
 simplicity's sake;
 #X obj 105 135 bng 15 250 50 0 empty empty 1 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -24,6 +24,8 @@ simplicity's sake;
 #000000;
 #X obj 168 135 bng 15 250 50 0 empty empty /4 17 7 0 10 #fcfcfc #000000
 #000000;
+#X obj 528 41 inlet;
+#X msg 530 74 0;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -40,4 +42,5 @@ simplicity's sake;
 #X connect 9 0 4 0;
 #X connect 9 0 8 0;
 #X connect 9 2 4 0;
+#X connect 18 0 1 1;
 #X coords 0 -1 1 1 100 60 1 100 100;

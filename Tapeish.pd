@@ -48,8 +48,8 @@ by the volume loss \, this should give the saturation effect, f 26
 #X obj 830 422 random 200;
 #X msg 372 248 1.8;
 #X msg 373 279 1.8;
-#X msg 414 274 0.004;
-#X obj 711 681 *~ 0.004;
+#X msg 414 274 0.002;
+#X obj 711 681 *~ 0.002;
 #X connect 0 0 37 0;
 #X connect 2 0 33 0;
 #X connect 3 0 10 0;
