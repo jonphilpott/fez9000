@@ -1,0 +1,24 @@
+#N canvas 0 0 618 300 12;
+#X obj 179 70 hip~ 10;
+#X obj 179 117 clip~ -1 1;
+#X obj 215 196 dac~;
+#X text 364 7 clipping is no bueno use hi pass to remove dc offset
+and then clip seems to be on linux clipping causes no output. fine
+on mac;
+#X obj 209 162 *~;
+#X obj 170 16 inlet~;
+#X obj 256 18 inlet;
+#X obj 304 66 clip 0 1;
+#X floatatom 303 129 5 0 0 0 - - - 0;
+#X msg 394 91 1, f 8;
+#X obj 394 64 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 1;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
