@@ -1,4 +1,4 @@
-#N canvas 960 18 956 1009 12;
+#N canvas 960 18 636 1009 12;
 #X msg 39 863 devicename /dev/ttyUSB0 9600;
 #X obj 863 68 s \$0-lb;
 #X obj 863 15 loadbang;
@@ -122,8 +122,8 @@ START BYTE 1: command# 2: Arg1 3: Arg2 4: 0xFF (255) - STOP BYTE Command
 #X obj 755 819 s fez-led-bn;
 #X msg 381 878 250 2 \$1 0 255;
 #X msg 520 887 250 1 \$1 \$2 255;
-#X text 656 399 to stop overflowing LED board we scan the parameters
-every 20 ms;
+#X text 644 370 to stop overflowing LED board we scan the parameters
+every 20 ms, f 17;
 #X msg 271 879 250 1 0 \$1 255;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
