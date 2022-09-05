@@ -98,6 +98,8 @@ void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 {
   switch (cmd) {
     case COMMAND_SET_PARAM:
+      Started = 1;
+      LastCommandAt = millis();
       // wrap around parameters, cap args to 5 bits
       Params[arg1 % 10] = arg2 & 0x1F;
       updateParams();
@@ -113,17 +115,57 @@ void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 }
 
 unsigned long target;
-uint8_t brightness = 0;
+uint8_t Command;
+uint8_t Arg1, Arg2;
+
+#define STATE_WAIT_START (0)
+#define STATE_WAIT_CMD (1)
+#define STATE_WAIT_ARG1 (2)
+#define STATE_WAIT_ARG2 (3)
+#define STATE_WAIT_END (4)
+
+uint8_t State = STATE_WAIT_START;
+
 
 void ReadCommand()
 {
-  uint8_t ReadBuffer[4];
+  uint8_t ReadBuffer[5];
 
-  if (Serial.available()) {
-    int num = Serial.readBytes(ReadBuffer, 4);
-    // byte 4 should be 'stop' byte 255
-    if (ReadBuffer[3] == 255) {
-      parseCommand(ReadBuffer[0], ReadBuffer[1], ReadBuffer[2]);
+  if (Serial.available() > 4) {
+    int num = Serial.readBytes(ReadBuffer, 5);
+    for (int i = 0 ; i < 5; i++) {
+      uint8_t b = ReadBuffer[i];
+
+      // if we see a start byte, reset statemachine to start
+      if (b == 0xFA) {
+        State = STATE_WAIT_START;
+      }
+
+      switch (State) {
+        case STATE_WAIT_START:
+          if (b == 0xFA) {
+            State = STATE_WAIT_CMD;
+          }
+          break;
+        case STATE_WAIT_CMD:
+          Command = b;
+          State = STATE_WAIT_ARG1;
+          break;
+        case STATE_WAIT_ARG1:
+          Arg1 = b;
+          State = STATE_WAIT_ARG2;
+          break;
+        case STATE_WAIT_ARG2:
+          Arg2 = b;
+          State = STATE_WAIT_END;
+          break;
+        case STATE_WAIT_END:
+          if (b == 255) {
+            parseCommand(Command, Arg1, Arg2);
+          }
+          State = STATE_WAIT_START;
+          break;
+      }
     }
   }
 }
@@ -148,8 +190,8 @@ void loop() {
     }
 
     EVERY_N_MILLISECONDS( 40 ) {
-      if ( random8() < 70) {
-        leds[ BLAH_SECTION_START + random16(NUM_LEDS - BLAH_SECTION_START - 1) ] += CRGB::Pink;
+      if (random8() < 70) {
+        leds[ BLAH_SECTION_START + random16(NUM_LEDS - BLAH_SECTION_START - 1) ] += CRGB::Blue;
       }
     }
 
