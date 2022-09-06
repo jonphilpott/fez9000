@@ -39,7 +39,9 @@ f 13;
 #X floatatom 161 141 5 0 0 0 %/ - - 0;
 #X obj 181 120 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 355 398 random 5;
+#X obj 355 398 random \$2;
+#X text 71 536 arguments: (1) which step# to fire on \, (2) the random
+number limit;
 #X connect 0 0 1 0;
 #X connect 0 0 31 0;
 #X connect 1 0 2 0;
