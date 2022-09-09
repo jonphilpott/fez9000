@@ -4,6 +4,7 @@
 
 // How many leds in your strip?
 #define NUM_LEDS (4*60)
+#define NUM_PARAMS (10)
 
 #define BLAH_SECTION_START (60)
 
@@ -11,29 +12,45 @@
 #define CLOCK_PIN 13
 
 #define FRAMES_PER_SECOND  30
+#define PARAM_UPDATE_ANIMATION_PERIOD (500)
 
 uint8_t Started = 0;
 
 // Define the array of leds
 CRGB leds[NUM_LEDS];
 
-uint8_t Params[10];
+uint8_t Params[NUM_PARAMS];
+uint8_t New_Params[NUM_PARAMS];
+unsigned long Animate_Params[NUM_PARAMS];
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 uint8_t BeatNumber = 0;
 
 unsigned long LastCommandAt;
 
+void Reset()
+{
+  for (int i = 0 ; i < NUM_LEDS ; i++) {
+    int n = random8();
+    if (n & 1) {
+      leds[i] = CRGB::Red;
+    }
+    else {
+      leds[i] = CRGB::Black;
+    }
+  }
+}
 
 void setup()
 {
   bzero(Params, sizeof(Params));
+  bzero(New_Params, sizeof(New_Params));
+  bzero(Animate_Params, sizeof(Animate_Params));
   FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
   // Cap power usage to 1.5 A
   FastLED.setMaxPowerInVoltsAndMilliamps(5, 1500);
   Serial.begin(9600);
+  Reset();
 }
-
-
 
 void handleBeat()
 {
@@ -67,12 +84,12 @@ CRGB ParamColors[] = {
   CRGB::Yellow
 };
 
-void updateParams()
+void displayParams()
 {
   for (int i = 0 ; i < BLAH_SECTION_START ; i++) {
     leds[i] = CRGB::White;
   }
-  for (int pn = 0 ; pn < 10 ; pn++) {
+  for (int pn = 0 ; pn < NUM_PARAMS ; pn++) {
     uint8_t param = Params[pn];
     uint8_t base_led = pn * 6;
     for (int i = 0 ; i < 5 ; i++) {
@@ -96,16 +113,17 @@ void updateParams()
 
 void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 {
+  unsigned long m = millis();
   switch (cmd) {
     case COMMAND_SET_PARAM:
       Started = 1;
-      LastCommandAt = millis();
+      LastCommandAt = m;
       // wrap around parameters, cap args to 5 bits
-      Params[arg1 % 10] = arg2 & 0x1F;
-      updateParams();
+      New_Params[arg1 % NUM_PARAMS] = arg2 & 0x1F;
+      Animate_Params[arg1 % NUM_PARAMS] = (m + PARAM_UPDATE_ANIMATION_PERIOD);
       break;
     case COMMAND_BEAT:
-      LastCommandAt = millis();
+      LastCommandAt = m;
       Started = 1;
       // cap beats to 16
       BeatNumber = arg1 & 0xF;
@@ -170,6 +188,7 @@ void ReadCommand()
   }
 }
 
+
 void loop() {
   unsigned long t = millis();
 
@@ -193,9 +212,20 @@ void loop() {
       if (random8() < 70) {
         leds[ BLAH_SECTION_START + random16(NUM_LEDS - BLAH_SECTION_START - 1) ] += CRGB::Blue;
       }
+
+      for (int i = 0; i < NUM_PARAMS; i++) {
+        if (Animate_Params[i] > t) {
+          Params[i] = random8() % 0x0F;
+        }
+        else {
+          Params[i] = New_Params[i];
+        }
+      }
+      displayParams();
     }
 
     if ((t - LastCommandAt) > (10 * 1000)) {
+      Reset();
       Started = 0;
     }
   }
