@@ -12,7 +12,7 @@
 #define CLOCK_PIN 13
 
 #define FRAMES_PER_SECOND  30
-#define PARAM_UPDATE_ANIMATION_PERIOD (500)
+#define PARAM_UPDATE_ANIMATION_PERIOD (100)
 
 uint8_t Started = 0;
 
