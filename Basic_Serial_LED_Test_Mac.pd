@@ -1,45 +1,100 @@
-#N canvas 380 33 1497 933 12;
+#N canvas 183 25 1497 933 12;
 #X msg 142 181 devices;
 #X floatatom 488 228 5 0 0 0 - - - 0;
 #X msg 240 216 close;
 #X obj 472 39 r BN;
 #X obj 394 26 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 794 245 Counter 16;
-#X obj 731 179 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 1073 236 Counter 16;
+#X obj 1010 170 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 753 297 s BN;
-#X obj 720 49 ctlin 8 1;
-#X obj 732 81 / 4;
-#X text 607 208 BUG: if metro < 200ms LED board freezes up and goes
+#X obj 1032 288 s BN;
+#X obj 999 40 ctlin 8 1;
+#X obj 1011 72 / 4;
+#X text 886 199 BUG: if metro < 200ms LED board freezes up and goes
 into "wait" mode same if lots of parameter updates are sent seems like
 the esp32 is receiving commands but theyre not making sense. possible
 the weirdness is happening within PureData, f 19;
 #X obj 134 261 r cmds;
 #X obj 421 338 s cmds;
 #X obj 159 109 s cmds;
-#X obj 907 174 s cmds;
-#X obj 829 83 int;
+#X obj 1186 165 s cmds;
+#X obj 1108 74 int;
 #X floatatom 513 75 5 0 0 0 - - - 0;
 #X msg 332 126 250 1 0 \$1 255;
 #X msg 390 278 250 2 \$1 0 255;
-#X msg 866 133 250 1 2 \$1 255;
+#X msg 1145 124 250 1 2 \$1 255;
 #X obj 160 295 print;
 #X obj 154 405 print o;
-#X obj 601 610 Counter 16;
-#X obj 660 702 s cmds;
-#X msg 619 661 250 1 2 \$1 255;
-#X obj 566 475 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 1180 585 Counter 16;
+#X obj 1239 677 s cmds;
+#X msg 1198 636 250 1 2 \$1 255;
+#X obj 1143 455 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 244 303 print cmd;
 #X msg 21 134 open 3;
 #X obj 40 339 comport;
-#X obj 574 514 metro 200;
-#X obj 765 200 metro 500;
-#X obj 341 411 random 32;
-#X obj 351 538 s cmds;
+#X obj 1153 489 metro 200;
+#X obj 333 484 random 32;
+#X obj 343 611 s cmds;
 #X obj 395 362 bang;
-#X msg 346 469 250 1 2 \$1 255;
+#X msg 338 542 250 1 2 \$1 255;
+#X obj 334 437 r BN;
+#X obj 332 465 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 474 486 random 32;
+#X obj 484 613 s cmds;
+#X obj 475 439 r BN;
+#X obj 473 467 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 479 544 250 1 3 \$1 255;
+#X obj 611 480 random 32;
+#X obj 621 607 s cmds;
+#X obj 612 433 r BN;
+#X obj 610 461 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 616 538 250 1 4 \$1 255;
+#X obj 757 478 random 32;
+#X obj 767 605 s cmds;
+#X obj 758 431 r BN;
+#X obj 756 459 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 762 536 250 1 5 \$1 255;
+#X obj 284 692 random 32;
+#X obj 294 819 s cmds;
+#X obj 285 645 r BN;
+#X obj 283 673 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 425 694 random 32;
+#X obj 435 821 s cmds;
+#X obj 426 647 r BN;
+#X obj 424 675 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 562 688 random 32;
+#X obj 572 815 s cmds;
+#X obj 563 641 r BN;
+#X obj 561 669 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 708 686 random 32;
+#X obj 718 813 s cmds;
+#X obj 709 639 r BN;
+#X obj 707 667 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 289 750 250 1 6 \$1 255;
+#X msg 430 752 250 1 7 \$1 255;
+#X msg 567 746 250 1 8 \$1 255;
+#X msg 713 744 250 1 9 \$1 255;
+#X obj 131 497 random 32;
+#X obj 141 624 s cmds;
+#X obj 132 450 r BN;
+#X obj 130 478 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 136 555 250 1 1 \$1 255;
+#X obj 632 102 Multi_Clock;
+#X floatatom 826 41 5 0 0 0 - - - 0;
+#X floatatom 809 218 5 0 0 0 - - - 0;
+#X obj 815 266 s BN;
+#X obj 1044 191 metro 200;
 #X connect 0 0 28 0;
 #X connect 1 0 18 0;
 #X connect 2 0 28 0;
@@ -47,9 +102,8 @@ the weirdness is happening within PureData, f 19;
 #X connect 3 0 4 0;
 #X connect 3 0 16 0;
 #X connect 3 0 17 0;
-#X connect 4 0 31 0;
 #X connect 5 0 7 0;
-#X connect 6 0 30 0;
+#X connect 6 0 80 0;
 #X connect 8 0 9 0;
 #X connect 9 0 15 0;
 #X connect 11 0 28 0;
@@ -63,6 +117,43 @@ the weirdness is happening within PureData, f 19;
 #X connect 27 0 28 0;
 #X connect 28 0 21 0;
 #X connect 29 0 22 0;
-#X connect 30 0 5 0;
-#X connect 31 0 34 0;
-#X connect 34 0 32 0;
+#X connect 30 0 33 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 30 0;
+#X connect 36 0 40 0;
+#X connect 38 0 39 0;
+#X connect 39 0 36 0;
+#X connect 40 0 37 0;
+#X connect 41 0 45 0;
+#X connect 43 0 44 0;
+#X connect 44 0 41 0;
+#X connect 45 0 42 0;
+#X connect 46 0 50 0;
+#X connect 48 0 49 0;
+#X connect 49 0 46 0;
+#X connect 50 0 47 0;
+#X connect 51 0 67 0;
+#X connect 53 0 54 0;
+#X connect 54 0 51 0;
+#X connect 55 0 68 0;
+#X connect 57 0 58 0;
+#X connect 58 0 55 0;
+#X connect 59 0 69 0;
+#X connect 61 0 62 0;
+#X connect 62 0 59 0;
+#X connect 63 0 70 0;
+#X connect 65 0 66 0;
+#X connect 66 0 63 0;
+#X connect 67 0 52 0;
+#X connect 68 0 56 0;
+#X connect 69 0 60 0;
+#X connect 70 0 64 0;
+#X connect 71 0 75 0;
+#X connect 73 0 74 0;
+#X connect 74 0 71 0;
+#X connect 75 0 72 0;
+#X connect 76 9 78 0;
+#X connect 77 0 76 1;
+#X connect 78 0 79 0;
+#X connect 80 0 5 0;

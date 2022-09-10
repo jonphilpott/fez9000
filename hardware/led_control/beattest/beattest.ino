@@ -1,6 +1,10 @@
 
 #include <FastLED.h>
 #include <string.h>
+#include <esp_task_wdt.h>
+
+#define WDT_TIMEOUT 3
+
 
 // How many leds in your strip?
 #define NUM_LEDS (4*60)
@@ -13,6 +17,8 @@
 
 #define FRAMES_PER_SECOND  30
 #define PARAM_UPDATE_ANIMATION_PERIOD (100)
+
+bool On_the_one = false;
 
 uint8_t Started = 0;
 
@@ -36,17 +42,22 @@ uint8_t FEZTABLE[] = {
 
 };
 
-void Reset()
+void ShowFez9000()
 {
   for (int i = 0 ; i < NUM_LEDS; i++) {
     uint8_t p = FEZTABLE[i];
     if (p) {
-      leds[p] = CRGB::Red;
+      leds[i] = CRGB::Red;
     }
     else {
-      leds[p] = CRGB::Black;
+      leds[i] = CRGB::Black;
     }
   }
+}
+
+void Reset()
+{
+  ShowFez9000();
 }
 
 void setup()
@@ -56,29 +67,29 @@ void setup()
   bzero(Animate_Params, sizeof(Animate_Params));
   FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
   // Cap power usage to 1.5 A
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, 1500);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, 3000);
   Serial.begin(9600);
+
+  esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
+  esp_task_wdt_add(NULL); //add current thread to WDT watch
+
   Reset();
 }
 
 void handleBeat()
 {
-  if ((BeatNumber % 4) == 0) {
-    for (int i = BLAH_SECTION_START ; i < NUM_LEDS ; i++) {
-      leds[i] = 0x220000;
-    }
-  }
-  else {
-    reRandom();
-  }
+  reRandom();
 }
 
 void reRandom()
 {
+  CRGB on_c = CRGB::Red;
+  CRGB off_c = CRGB::Red;
+  off_c /= 2;
   for (int i = BLAH_SECTION_START ; i < NUM_LEDS ; i++) {
     int n = random8();
     if (n & 1) {
-      leds[i] = CRGB::Red;
+      leds[i] = On_the_one ? on_c : off_c;
     }
     else {
       leds[i] = CRGB::Black;
@@ -88,7 +99,7 @@ void reRandom()
 
 CRGB ParamColors[] = {
   CRGB::Green,
-  CRGB::Red,
+  CRGB::Purple,
   CRGB::Blue,
   CRGB::Yellow
 };
@@ -98,17 +109,21 @@ void displayParams()
   unsigned long t = millis();
 
   for (int i = 0 ; i < BLAH_SECTION_START ; i++) {
-    leds[i] = CRGB::White;
+    leds[i] = CRGB::Red;
   }
   for (int pn = 0 ; pn < NUM_PARAMS ; pn++) {
     uint8_t param = Params[pn];
     uint8_t base_led = pn * 6;
     bool is_updating = Animate_Params[pn] > t;
-    CRGB c = is_updating ? CRGB::Gray : ParamColors[pn % 4];
+    CRGB c = ParamColors[pn % 4];
+
+    if (is_updating) {
+      c /= 4;
+    }
 
     for (int i = 0 ; i < 5 ; i++) {
       if (param & (1 << i)) {
-        leds[base_led + i] = ParamColors[pn % 4];
+        leds[base_led + i] = c;
       }
       else {
         leds[base_led + i] = CRGB::Black;
@@ -141,6 +156,7 @@ void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
       Started = 1;
       // cap beats to 16
       BeatNumber = arg1 & 0xF;
+      On_the_one = ((BeatNumber % 4) == 0);
       handleBeat();
       break;
   }
@@ -211,7 +227,6 @@ void FlushSerial()
 
 void loop() {
   unsigned long t = millis();
-
   ReadCommand();
 
   if (!Started) {
@@ -220,7 +235,7 @@ void loop() {
       gHue++;
       uint8_t BeatsPerMinute = 82;
       CRGBPalette16 palette = PartyColors_p;
-      uint8_t beat = beatsin8( BeatsPerMinute, 64, 255);
+      uint8_t beat = beatsin8( BeatsPerMinute, 90, 255);
       for ( int i = 0; i < NUM_LEDS; i++) {
         if (FEZTABLE[i]) {
           leds[i] = ColorFromPalette(palette, gHue + (i * 2), beat - gHue + (i * 10));
@@ -230,10 +245,11 @@ void loop() {
   }
   else {
     EVERY_N_MILLISECONDS( 40 ) {
-      if (random8() < 70) {
-        leds[ BLAH_SECTION_START + random16(NUM_LEDS - BLAH_SECTION_START - 1) ] += CRGB::Blue;
+      for (int i = BLAH_SECTION_START; i < NUM_LEDS; i++) {
+        if (random8() > 128) {
+          leds[i] /= 2;
+        }
       }
-
       for (int i = 0; i < NUM_PARAMS; i++) {
         if (Animate_Params[i] > t) {
           Params[i] = random8() % 0x0F;
@@ -253,6 +269,7 @@ void loop() {
       Started = 0;
     }
   }
+  esp_task_wdt_reset();
 
   // insert a delay to keep the framerate modest
   FastLED.delay(1000 / FRAMES_PER_SECOND);
