@@ -3,8 +3,12 @@
 #include <string.h>
 #include <esp_task_wdt.h>
 
+
+
 #define WDT_TIMEOUT 3
 
+#define DEFAULT_CURRENT_DRAW (1000)
+#define MAX_CURRENT_DRAW (4000)
 
 // How many leds in your strip?
 #define NUM_LEDS (4*60)
@@ -67,7 +71,7 @@ void setup()
   bzero(Animate_Params, sizeof(Animate_Params));
   FastLED.addLeds<WS2812, DATA_PIN, GRB>(leds, NUM_LEDS);
   // Cap power usage to 1.5 A
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, 3000);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, DEFAULT_CURRENT_DRAW);
   Serial.begin(9600);
 
   esp_task_wdt_init(WDT_TIMEOUT, true); //enable panic so ESP32 restarts
@@ -139,6 +143,8 @@ void displayParams()
 // command: beat, 0x2
 // arg1: beat# (0-15)
 #define COMMAND_BEAT (0x2)
+#define COMMAND_BRIGHTNESS (0x3)
+
 
 void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 {
@@ -158,6 +164,10 @@ void parseCommand(uint8_t cmd, uint8_t arg1, uint8_t arg2)
       BeatNumber = arg1 & 0xF;
       On_the_one = ((BeatNumber % 4) == 0);
       handleBeat();
+      break;
+
+    case COMMAND_BRIGHTNESS:
+      FastLED.setMaxPowerInVoltsAndMilliamps(5, MAX_CURRENT_DRAW >> arg1);
       break;
   }
 }
