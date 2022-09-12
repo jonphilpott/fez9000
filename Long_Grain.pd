@@ -84,6 +84,8 @@ grain one of these 8 pieces, f 15;
 #X floatatom 1601 224 5 0 0 0 - - - 0;
 #X obj 1643 167 f;
 #X obj 1455 212 t b f;
+#X text 953 37 2: the size of the sample or a bang to update the sample
+playback time, f 17;
 #X connect 0 0 1 0;
 #X connect 1 0 45 0;
 #X connect 2 0 13 0;
