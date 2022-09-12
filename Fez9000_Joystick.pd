@@ -1,4 +1,4 @@
-#N canvas 0 18 956 1009 12;
+#N canvas 960 18 956 1009 12;
 #X obj 98 106 hid;
 #X msg 98 76 open 0x0079 0x0006;
 #X obj 194 20 loadbang;
