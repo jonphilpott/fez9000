@@ -1,7 +1,7 @@
-#N canvas 33 25 1916 1062 12;
+#N canvas 960 18 956 1009 12;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array sample 185569 float 2;
-#X coords 0 1 185569 -1 200 140 1;
+#X array sample 185569 float 4;
+#X coords 0 1 185568 -1 200 140 1;
 #X restore 1643 1001 graph;
 #X obj 1137 850 soundfiler;
 #X floatatom 1146 946 14 0 0 0 - - - 0;
@@ -34,7 +34,7 @@
 #X obj 915 563 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X obj 290 203 Multi_Clock;
-#X floatatom 488 137 5 0 0 0 - - - 0;
+#X floatatom 486 137 5 0 0 0 - - - 0;
 #X floatatom 258 358 15 0 0 0 - - - 0;
 #X msg 1137 824 read -resize samples/poultry.wav sample;
 #X obj 798 488 delread4~ d 800;
@@ -138,6 +138,19 @@
 #000000 0 1;
 #X obj 614 949 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
+#X obj 1502 377 random 30;
+#X obj 1502 427 mtof;
+#X obj 1555 463 * 0.1;
+#X obj 1380 385 t b b;
+#X obj 1380 360 r r;
+#X obj 1502 402 + 60;
+#X obj 637 653 lop~;
+#X obj 636 614 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 692 653 clip~ -0.3 0.3;
+#X obj 806 652 *~ 1.6;
+#X obj 106 789 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -164,9 +177,9 @@
 #X connect 23 0 22 1;
 #X connect 24 0 68 0;
 #X connect 24 3 69 0;
-#X connect 24 4 33 0;
 #X connect 24 5 35 0;
 #X connect 24 6 38 2;
+#X connect 24 6 33 0;
 #X connect 24 7 35 0;
 #X connect 24 7 31 0;
 #X connect 24 7 109 0;
@@ -183,7 +196,7 @@
 #X connect 34 0 28 0;
 #X connect 36 0 1 0;
 #X connect 36 0 49 0;
-#X connect 38 0 100 0;
+#X connect 38 0 119 0;
 #X connect 39 0 38 0;
 #X connect 41 0 42 0;
 #X connect 42 0 25 0;
@@ -244,4 +257,19 @@
 #X connect 107 0 108 0;
 #X connect 109 0 110 0;
 #X connect 111 0 6 3;
+#X connect 111 0 55 3;
 #X connect 112 0 89 3;
+#X connect 112 0 80 3;
+#X connect 113 0 118 0;
+#X connect 114 0 115 0;
+#X connect 114 0 98 0;
+#X connect 115 0 99 0;
+#X connect 116 0 79 0;
+#X connect 116 1 113 0;
+#X connect 117 0 116 0;
+#X connect 118 0 114 0;
+#X connect 119 0 121 0;
+#X connect 120 0 119 1;
+#X connect 121 0 122 0;
+#X connect 122 0 11 0;
+#X connect 123 0 6 0;
