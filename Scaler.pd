@@ -1,4 +1,4 @@
-#N canvas 488 719 1461 994 12;
+#N canvas 488 719 956 1009 12;
 #X obj 625 61 inlet;
 #X text 673 61 < chord tone#;
 #X obj 791 60 inlet;
@@ -63,7 +63,6 @@ etc \, and m = 0 MAJOR \, 1 = MINOR third inlet selects the octave
 #X obj 41 108 r \$0-r;
 #X obj 199 109 r \$0-m;
 #X obj 116 70 r \$0-o;
-#X text 911 177, f 21;
 #X connect 0 0 42 0;
 #X connect 2 0 5 0;
 #X connect 3 0 10 0;
