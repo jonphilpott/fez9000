@@ -1,4 +1,4 @@
-#N canvas 196 536 1916 1009 12;
+#N canvas 605 545 1916 1009 12;
 #X obj 19 24 Fez9000_LED_Control;
 #X obj 20 50 Fez9000_Joystick;
 #X obj 20 77 Fez9000_Knobs;
@@ -272,7 +272,7 @@ actually changed and not every bar, f 13;
 #X restore 69 675 pd Fez9000_Main_Mixer;
 #X obj 69 713 throw~ fez-main-tapeout;
 #X obj 897 45 loadbang;
-#N canvas 960 18 956 1009 Fez9000_Bass_Line 0;
+#N canvas 619 25 956 1009 Fez9000_Bass_Line 0;
 #X obj 306 312 Bass_Sequencer;
 #X floatatom 349 349 5 0 0 0 - - - 0;
 #X floatatom 431 262 5 0 0 0 - - - 0;
@@ -345,7 +345,7 @@ actually changed and not every bar, f 13;
 #X obj 1024 57 bng 15 250 50 0 empty empty FEZ9000 17 7 0 100 #fcfcfc
 #000000 #000000;
 #X text 53 540 stop kicks clashing with bass lines, f 11;
-#N canvas 960 18 956 1009 Fez9000_Melody_Line 0;
+#N canvas 1870 131 956 1240 Fez9000_Melody_Line 0;
 #X floatatom 349 349 5 0 0 0 - - - 0;
 #X floatatom 431 262 5 0 0 0 - - - 0;
 #X obj 344 281 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
