@@ -23,7 +23,6 @@
 #X obj 388 118 f 10;
 #X obj 331 68 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X msg 396 269 0 1 0 \, 1 \$1 5 \, 0 \$2 \$1;
 #X obj 214 443 *~;
 #X obj 145 175 vsl 15 60 5 20000 0 0 empty empty f 0 -9 0 10 #fcfcfc
 #000000 #000000 0 1;
@@ -34,8 +33,9 @@
 #000000 #000000;
 #X floatatom 689 455 5 0 0 0 - - - 0;
 #X obj 302 383 *~;
-#X connect 0 0 28 0;
-#X connect 0 0 28 1;
+#X msg 396 269 0 1 20 \, 1 \$1 20 \, 0 \$2 \$1;
+#X connect 0 0 27 0;
+#X connect 0 0 27 1;
 #X connect 2 0 17 0;
 #X connect 6 0 3 0;
 #X connect 6 0 18 0;
@@ -44,7 +44,7 @@
 #X connect 10 0 5 0;
 #X connect 10 0 13 0;
 #X connect 12 0 13 1;
-#X connect 13 0 20 0;
+#X connect 13 0 28 0;
 #X connect 14 0 18 0;
 #X connect 14 1 12 1;
 #X connect 15 0 16 0;
@@ -53,13 +53,13 @@
 #X connect 17 1 1 0;
 #X connect 18 0 12 0;
 #X connect 19 0 18 0;
-#X connect 20 0 0 0;
-#X connect 21 0 17 1;
-#X connect 23 0 24 0;
-#X connect 24 0 21 1;
-#X connect 24 0 22 0;
-#X connect 24 0 27 0;
-#X connect 25 0 24 0;
-#X connect 26 0 24 0;
-#X connect 28 0 21 0;
+#X connect 20 0 17 1;
+#X connect 22 0 23 0;
+#X connect 23 0 20 1;
+#X connect 23 0 21 0;
+#X connect 23 0 26 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 0;
+#X connect 27 0 20 0;
+#X connect 28 0 0 0;
 #X coords 0 -1 1 1 65 145 1 100 100;
