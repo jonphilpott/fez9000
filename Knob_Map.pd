@@ -9,6 +9,8 @@
 #X obj 77 173 int;
 #X obj 77 211 Dedup;
 #X text 125 213 we want whole numbers and no duplicated messages;
+#X msg 161 46 0;
+#X obj 162 19 loadbang;
 #X connect 1 0 3 0;
 #X connect 1 0 6 0;
 #X connect 2 0 5 0;
@@ -17,3 +19,5 @@
 #X connect 6 0 4 0;
 #X connect 7 0 8 0;
 #X connect 8 0 0 0;
+#X connect 10 0 6 0;
+#X connect 11 0 10 0;
