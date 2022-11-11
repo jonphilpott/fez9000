@@ -1,7 +1,7 @@
-#N canvas 960 18 476 1009 12;
+#N canvas 1536 18 380 1009 12;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-sample 576186 float 2;
-#X coords 0 1 576186 -1 200 140 1;
+#X array \$0-sample 731803 float 2;
+#X coords 0 1 731803 -1 200 140 1;
 #X restore 25 828 graph;
 #X obj 710 82 r \$0-sample-size;
 #X text 706 25 step 1 \, get sample size \, split into 16 pieces. 16
@@ -94,10 +94,10 @@ is arbitrary, f 28;
 #000000 #000000;
 #X obj 136 269 loadbang;
 #X obj 32 407 t f b;
-#X obj 199 381 f \$0;
+#X obj 258 404 f \$0;
 #X obj 259 348 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 199 405 \; \$1-sample normalize 1;
+#X msg 258 428 \; \$1-sample normalize 1;
 #X obj 710 115 f;
 #X obj 617 115 r \$0-shuffle;
 #X msg 297 929 0 30 0 \, 1 100 30;
