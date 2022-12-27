@@ -1,0 +1,90 @@
+#N canvas 0 18 636 1009 12;
+#X obj 227 368 Fezogene;
+#X obj 253 80 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 288 81 5 0 0 0 - - - 0;
+#X obj 348 89 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X floatatom 149 154 5 0 0 0 - - - 0;
+#X obj 372 41 metro 4000;
+#X obj 377 14 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 217 48 metro 800;
+#X obj 28 293 r sample-select;
+#X obj 143 294 r trig;
+#X obj 148 175 s sample-select;
+#X obj 217 121 s trig;
+#X obj 324 143 s trans;
+#X obj 266 307 r trans;
+#X obj 327 321 r shuffle;
+#X obj 478 143 s shuffle;
+#X obj 144 69 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 108 37 metro 1200;
+#X obj 204 292 r rtrig;
+#X obj 108 110 s rtrig;
+#X obj 227 415 throw~ fout;
+#X obj 114 728 catch~ fout;
+#X obj 574 345 Fezogene;
+#X obj 375 270 r sample-select;
+#X obj 490 271 r trig;
+#X obj 613 284 r trans;
+#X obj 674 298 r shuffle;
+#X obj 551 269 r rtrig;
+#X obj 574 392 throw~ fout;
+#X obj 243 560 Fezogene;
+#X obj 44 485 r sample-select;
+#X obj 159 486 r trig;
+#X obj 282 499 r trans;
+#X obj 343 513 r shuffle;
+#X obj 220 484 r rtrig;
+#X obj 243 607 throw~ fout;
+#X obj 139 837 Tapeish;
+#X obj 139 862 dac~;
+#X obj 124 761 *~ 0.4;
+#X obj 161 800 Rev_Delay;
+#X obj 319 747 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 321 706 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 322 674 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 320 643 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X connect 0 0 20 0;
+#X connect 1 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 15 0;
+#X connect 4 0 10 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 6 0 7 0;
+#X connect 6 0 17 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 1;
+#X connect 13 0 0 3;
+#X connect 14 0 0 4;
+#X connect 16 0 19 0;
+#X connect 17 0 16 0;
+#X connect 18 0 0 2;
+#X connect 21 0 38 0;
+#X connect 22 0 28 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 1;
+#X connect 25 0 22 3;
+#X connect 26 0 22 4;
+#X connect 27 0 22 2;
+#X connect 29 0 35 0;
+#X connect 30 0 29 0;
+#X connect 31 0 29 1;
+#X connect 32 0 29 3;
+#X connect 33 0 29 4;
+#X connect 34 0 29 2;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;
+#X connect 39 0 36 0;
+#X connect 40 0 39 4;
+#X connect 41 0 39 3;
+#X connect 42 0 39 2;
+#X connect 43 0 39 1;

@@ -1,4 +1,4 @@
-#N canvas 960 18 636 1009 12;
+#N canvas 640 18 956 1009 12;
 #X msg 39 863 devicename /dev/ttyUSB0 9600;
 #X obj 863 68 s \$0-lb;
 #X obj 863 15 loadbang;
@@ -11,105 +11,87 @@
 #X obj 573 397 metro 20;
 #X obj 558 455 s \$0-l;
 #X obj 520 851 r \$0-p;
-#X obj 120 56 f;
-#X obj 147 58 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 115 229 f;
+#X obj 142 231 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 159 229 r \$0-l;
+#X obj 114 282 Dedup;
+#X obj 114 347 s \$0-p;
+#X obj 115 201 r fez-led-p1;
+#X obj 159 254 sel 1;
+#X msg 114 320 1 \$1;
+#X obj 214 229 f;
+#X obj 241 231 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 258 229 r \$0-l;
+#X obj 213 282 Dedup;
+#X obj 213 347 s \$0-p;
+#X obj 313 230 f;
+#X obj 340 232 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 357 230 r \$0-l;
+#X obj 312 283 Dedup;
+#X obj 312 348 s \$0-p;
+#X obj 214 201 r fez-led-p2;
+#X obj 258 254 sel 2;
+#X msg 213 320 2 \$1;
+#X obj 357 255 sel 3;
+#X msg 312 321 3 \$1;
+#X obj 313 202 r fez-led-p3;
+#X obj 13 406 f;
+#X obj 40 408 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 164 56 r \$0-l;
-#X obj 119 109 Dedup;
-#X obj 119 174 s \$0-p;
-#X obj 120 28 r fez-led-p1;
-#X obj 164 81 sel 1;
-#X msg 119 147 1 \$1;
-#X obj 219 56 f;
-#X obj 246 58 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 57 406 r \$0-l;
+#X obj 12 459 Dedup;
+#X obj 12 524 s \$0-p;
+#X obj 112 407 f;
+#X obj 139 409 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 156 407 r \$0-l;
+#X obj 111 460 Dedup;
+#X obj 111 525 s \$0-p;
+#X obj 211 407 f;
+#X obj 238 409 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 255 407 r \$0-l;
+#X obj 210 460 Dedup;
+#X obj 210 525 s \$0-p;
+#X obj 310 408 f;
+#X obj 337 410 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 354 408 r \$0-l;
+#X obj 309 461 Dedup;
+#X obj 309 526 s \$0-p;
+#X obj 13 378 r fez-led-p4;
+#X obj 112 379 r fez-led-p5;
+#X obj 211 379 r fez-led-p6;
+#X obj 310 380 r fez-led-p7;
+#X obj 57 431 sel 4;
+#X obj 156 432 sel 5;
+#X obj 255 432 sel 6;
+#X obj 354 433 sel 7;
+#X msg 12 497 4 \$1;
+#X msg 111 498 5 \$1;
+#X msg 210 498 6 \$1;
+#X msg 309 499 7 \$1;
+#X obj 11 582 f;
+#X obj 38 584 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X obj 263 56 r \$0-l;
-#X obj 218 109 Dedup;
-#X obj 218 174 s \$0-p;
-#X obj 318 57 f;
-#X obj 345 59 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 362 57 r \$0-l;
-#X obj 317 110 Dedup;
-#X obj 317 175 s \$0-p;
-#X obj 219 28 r fez-led-p2;
-#X obj 263 81 sel 2;
-#X msg 218 147 2 \$1;
-#X obj 362 82 sel 3;
-#X msg 317 148 3 \$1;
-#X obj 318 29 r fez-led-p3;
-#X obj 18 233 f;
-#X obj 45 235 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 62 233 r \$0-l;
-#X obj 17 286 Dedup;
-#X obj 17 351 s \$0-p;
-#X obj 117 234 f;
-#X obj 144 236 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 55 582 r \$0-l;
+#X obj 10 635 Dedup;
+#X obj 10 700 s \$0-p;
+#X obj 110 583 f;
+#X obj 137 585 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 161 234 r \$0-l;
-#X obj 116 287 Dedup;
-#X obj 116 352 s \$0-p;
-#X obj 216 234 f;
-#X obj 243 236 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 260 234 r \$0-l;
-#X obj 215 287 Dedup;
-#X obj 215 352 s \$0-p;
-#X obj 315 235 f;
-#X obj 342 237 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 359 235 r \$0-l;
-#X obj 314 288 Dedup;
-#X obj 314 353 s \$0-p;
-#X obj 18 205 r fez-led-p4;
-#X obj 117 206 r fez-led-p5;
-#X obj 216 206 r fez-led-p6;
-#X obj 315 207 r fez-led-p7;
-#X obj 62 258 sel 4;
-#X obj 161 259 sel 5;
-#X obj 260 259 sel 6;
-#X obj 359 260 sel 7;
-#X msg 17 324 4 \$1;
-#X msg 116 325 5 \$1;
-#X msg 215 325 6 \$1;
-#X msg 314 326 7 \$1;
-#X obj 16 409 f;
-#X obj 43 411 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 60 409 r \$0-l;
-#X obj 15 462 Dedup;
-#X obj 15 527 s \$0-p;
-#X obj 115 410 f;
-#X obj 142 412 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 159 410 r \$0-l;
-#X obj 114 463 Dedup;
-#X obj 114 528 s \$0-p;
-#X obj 214 410 f;
-#X obj 241 412 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 258 410 r \$0-l;
-#X obj 213 463 Dedup;
-#X obj 213 528 s \$0-p;
-#X obj 313 411 f;
-#X obj 340 413 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 357 411 r \$0-l;
-#X obj 312 464 Dedup;
-#X obj 312 529 s \$0-p;
-#X obj 16 381 r fez-led-p8;
-#X obj 115 382 r fez-led-p9;
-#X obj 214 382 r fez-led-p10;
-#X obj 313 383 r fez-led-p11;
-#X obj 60 434 sel 8;
-#X obj 159 435 sel 9;
-#X obj 258 435 sel 10;
-#X obj 357 436 sel 11;
-#X msg 15 500 8 \$1;
-#X msg 114 501 9 \$1;
-#X msg 213 501 10 \$1;
-#X msg 312 502 11 \$1;
+#X obj 154 583 r \$0-l;
+#X obj 109 636 Dedup;
+#X obj 109 701 s \$0-p;
+#X obj 11 554 r fez-led-p8;
+#X obj 110 555 r fez-led-p9;
+#X obj 55 607 sel 8;
+#X obj 154 608 sel 9;
+#X msg 10 673 8 \$1;
+#X msg 109 674 9 \$1;
 #X obj 558 427 Counter 12;
 #X obj 748 703 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
@@ -128,15 +110,22 @@ START BYTE 1: command# 2: Arg1 3: Arg2 4: 0xFF (255) - STOP BYTE Command
 0 = max brightness;
 #X obj 644 857 r fez-led-brightness;
 #X msg 643 885 250 3 \$1 0 255;
+#X obj 119 142 hsl 200 40 0 8 0 0 empty empty led\ brightness -2 -8
+0 10 #ff0400 #faff00 #000000 0 1;
+#X obj 347 167 s fez-led-brightness;
+#X floatatom 347 192 5 0 0 0 - - - 0;
+#X obj 290 108 bng 30 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#ff0400 #000000;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
 #X connect 5 0 0 0;
-#X connect 6 0 103 0;
-#X connect 6 0 106 0;
+#X connect 6 0 87 0;
+#X connect 6 0 90 0;
+#X connect 6 0 98 0;
 #X connect 7 0 8 0;
-#X connect 8 0 99 0;
-#X connect 10 0 104 0;
+#X connect 8 0 83 0;
+#X connect 10 0 88 0;
 #X connect 11 0 14 0;
 #X connect 12 0 11 0;
 #X connect 13 0 17 0;
@@ -188,38 +177,26 @@ START BYTE 1: command# 2: Arg1 3: Arg2 4: 0xFF (255) - STOP BYTE Command
 #X connect 66 0 54 0;
 #X connect 67 0 70 0;
 #X connect 68 0 67 0;
-#X connect 69 0 91 0;
-#X connect 70 0 95 0;
+#X connect 69 0 79 0;
+#X connect 70 0 81 0;
 #X connect 72 0 75 0;
 #X connect 73 0 72 0;
-#X connect 74 0 92 0;
-#X connect 75 0 96 0;
-#X connect 77 0 80 0;
-#X connect 78 0 77 0;
-#X connect 79 0 93 0;
-#X connect 80 0 97 0;
-#X connect 82 0 85 0;
-#X connect 83 0 82 0;
-#X connect 84 0 94 0;
-#X connect 85 0 98 0;
-#X connect 87 0 67 1;
-#X connect 88 0 72 1;
-#X connect 89 0 77 1;
-#X connect 90 0 82 1;
-#X connect 91 0 68 0;
-#X connect 92 0 73 0;
-#X connect 93 0 78 0;
-#X connect 94 0 83 0;
-#X connect 95 0 71 0;
-#X connect 96 0 76 0;
-#X connect 97 0 81 0;
-#X connect 98 0 86 0;
-#X connect 99 0 9 0;
-#X connect 100 0 107 0;
-#X connect 101 0 102 0;
-#X connect 103 0 4 0;
-#X connect 104 0 4 0;
-#X connect 106 0 4 0;
-#X connect 107 0 101 0;
-#X connect 109 0 110 0;
-#X connect 110 0 4 0;
+#X connect 74 0 80 0;
+#X connect 75 0 82 0;
+#X connect 77 0 67 1;
+#X connect 78 0 72 1;
+#X connect 79 0 68 0;
+#X connect 80 0 73 0;
+#X connect 81 0 71 0;
+#X connect 82 0 76 0;
+#X connect 83 0 9 0;
+#X connect 84 0 91 0;
+#X connect 85 0 86 0;
+#X connect 87 0 4 0;
+#X connect 88 0 4 0;
+#X connect 90 0 4 0;
+#X connect 91 0 85 0;
+#X connect 93 0 94 0;
+#X connect 94 0 4 0;
+#X connect 95 0 96 0;
+#X coords 0 -1 1 1 240 90 1 100 100;

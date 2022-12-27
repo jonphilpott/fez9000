@@ -1,0 +1,30 @@
+#N canvas 0 18 1916 1009 12;
+#X obj 624 508 dac~;
+#X obj 600 233 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 641 221 5 0 0 0 - - - 0;
+#X floatatom 701 233 5 0 0 0 - - - 0;
+#X obj 615 298 AR_LPG;
+#X floatatom 750 231 5 0 0 0 - - - 0;
+#X obj 813 287 vsl 15 128 0 20000 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 413 242 expr~ -1 + 2*$v1;
+#X obj 414 205 phasor~ 110;
+#X obj 649 122 Fez9000_Joystick;
+#X obj 562 155 r fez-trig-1;
+#X obj 649 93 Fez9000_Knobs;
+#X obj 657 153 Knob_Map fez-k-b1-1 10 1000;
+#X obj 706 180 Knob_Map fez-k-b1-2 10 1000;
+#X obj 752 205 Knob_Map fez-k-b1-3 10 5000;
+#X connect 1 0 4 1;
+#X connect 2 0 4 2;
+#X connect 3 0 4 3;
+#X connect 4 0 0 0;
+#X connect 5 0 4 4;
+#X connect 6 0 4 4;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 10 0 1 0;
+#X connect 12 0 2 0;
+#X connect 13 0 3 0;
+#X connect 14 0 5 0;

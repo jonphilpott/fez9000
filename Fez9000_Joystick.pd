@@ -1,4 +1,4 @@
-#N canvas 0 18 956 1009 12;
+#N canvas 1280 18 956 1009 12;
 #X obj 98 106 hid;
 #X msg 98 76 open 0x0079 0x0006;
 #X obj 194 20 loadbang;
@@ -65,6 +65,9 @@ btn_11 btn_10 btn_9 btn_8;
 #X msg 87 876 \$2;
 #X obj 49 911 sel 1;
 #X obj 87 950 send;
+#X obj 166 927 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X symbolatom 277 904 16 0 0 0 - - - 0;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 5 0;
@@ -132,6 +135,8 @@ btn_11 btn_10 btn_9 btn_8;
 #X connect 53 0 52 0;
 #X connect 54 0 53 0;
 #X connect 55 0 59 1;
+#X connect 55 0 60 0;
+#X connect 55 0 61 0;
 #X connect 56 0 57 0;
 #X connect 56 1 55 0;
 #X connect 57 0 58 0;

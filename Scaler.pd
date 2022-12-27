@@ -1,4 +1,4 @@
-#N canvas 0 25 1461 906 12;
+#N canvas 0 25 1461 899 12;
 #X obj 625 61 inlet;
 #X text 673 61 < chord tone#;
 #X obj 791 60 inlet;
