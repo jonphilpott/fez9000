@@ -1,0 +1,26 @@
+#N canvas 952 121 675 476 12;
+#X floatatom 95 252 5 0 0 0 - - - 0;
+#X floatatom 95 359 5 0 0 0 - - - 0;
+#X obj 95 63 inlet;
+#X obj 132 160 * 2;
+#X obj 152 68 inlet;
+#X obj 101 405 outlet;
+#X obj 53 98 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 94 211 Counter 4;
+#X floatatom 171 183 5 0 0 0 - - - 0;
+#X obj 94 298 expr if ($f1 > $f2 \, ($f2*2)-$f1 \, $f1);
+#X obj 153 119 f \$1;
+#X obj 163 92 loadbang;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 7 2;
+#X connect 3 0 8 0;
+#X connect 4 0 10 0;
+#X connect 7 0 0 0;
+#X connect 9 0 1 0;
+#X connect 10 0 3 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;

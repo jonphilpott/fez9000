@@ -1,0 +1,43 @@
+#N canvas -28 341 781 481 12;
+#X obj 432 209 Fez9000-ENV;
+#X obj 332 66 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 343 17 hsl 100 15 0 2000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 401 39 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 441 65 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 477 89 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 201 421 dac~;
+#X obj 136 177 Fez9000-VCO;
+#X obj 57 95 mtof;
+#X obj 59 70 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 140 95 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 197 116 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 214 148 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 240 309 *~;
+#X obj 366 269 cyclone/scope~ 130 130 256 3 128 -1 1 0 0 0 0 205 229
+232 74 79 77 96 98 102 0 empty;
+#X floatatom 60 175 5 0 0 0 - - - 0;
+#X connect 0 0 13 1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 4 0 0 3;
+#X connect 5 0 0 4;
+#X connect 7 0 13 0;
+#X connect 8 0 7 0;
+#X connect 8 0 15 0;
+#X connect 9 0 8 0;
+#X connect 10 0 7 1;
+#X connect 11 0 7 2;
+#X connect 12 0 7 3;
+#X connect 13 0 6 0;
+#X connect 13 0 6 1;
+#X connect 13 0 14 0;
