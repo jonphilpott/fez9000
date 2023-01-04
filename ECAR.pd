@@ -26,7 +26,7 @@
 #X obj 529 115 inlet;
 #X obj 529 268 f \$1;
 #X floatatom 144 138 5 0 0 0 - - - 0;
-#X obj 120 139 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 120 139 tgl 15 0 empty empty empty 17 7 0 10 #0400ff #00faff
 #000000 0 1;
 #X obj 545 239 loadbang;
 #X obj 338 331 expr ($f1 & $f2) > 0;
@@ -48,9 +48,9 @@
 #X connect 13 0 26 0;
 #X connect 14 0 20 0;
 #X connect 16 0 6 0;
-#X connect 17 0 0 0;
-#X connect 18 0 1 0;
-#X connect 19 0 2 0;
+#X connect 17 0 0 1;
+#X connect 18 0 1 1;
+#X connect 19 0 2 1;
 #X connect 21 0 22 0;
 #X connect 22 0 10 0;
 #X connect 22 0 23 0;
