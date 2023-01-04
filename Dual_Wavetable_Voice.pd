@@ -1,5 +1,5 @@
-#N canvas 463 25 1035 906 12;
-#N canvas 0 22 450 278 (subpatch) 0;
+#N canvas 463 25 1035 899 12;
+#N canvas 643 646 450 278 (subpatch) 0;
 #X array \$0-wt1 131 float 5;
 #A 0 -0.0986155 0 0.0986155 0.196106 0.291373 0.383363 0.471099 0.553692
 0.630366 0.70047 0.763492 0.819065 0.866976 0.907159 0.939701 0.964827
@@ -19,7 +19,7 @@
 -0.964829 -0.939704 -0.907163 -0.866981 -0.819071 -0.763498 -0.700477
 -0.630373 -0.5537 -0.471108 -0.383373 -0.291383 -0.196117 -0.0986261
 -1.06824e-05 0.0986049;
-#X coords 0 1 130 -1 200 140 1;
+#X coords 0 1 130 -1 200 140 1 0 0;
 #X restore 75 276 graph;
 #X obj 78 464 phasor~ 440;
 #X obj 78 519 tabread4~ \$0-wt1;
@@ -58,12 +58,6 @@
 #X floatatom 735 314 5 0 0 0 - - - 0;
 #X obj 814 274 expr 1-$f1;
 #X floatatom 817 315 5 0 0 0 - - - 0;
-#X obj 737 106 expr~ (1+$v1)/2;
-#X obj 737 150 snapshot~;
-#X obj 657 109 metro 10;
-#X obj 658 79 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 737 70 osc~ 0.25;
 #X obj 216 51 inlet;
 #X obj 230 91 mtof;
 #X obj 221 134 s \$0-nin;
@@ -71,53 +65,65 @@
 #X obj 319 430 r \$0-nin;
 #X obj 713 353 s \$0-wt1-vol;
 #X obj 817 350 s \$0-wt2-vol;
-#X obj 656 43 loadbang;
-#X obj 562 532 pack \$0;
-#X obj 567 498 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 481 758 pack \$0;
+#X obj 486 724 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 823 525 pack \$0;
-#X obj 828 491 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 742 751 pack \$0;
+#X obj 747 717 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 837 568 \; \$1-wt2 sinesum 128 0.8 0.2 0.5 0.2 0.1 0.11 \; \$1-wt2
+#X msg 756 794 \; \$1-wt2 sinesum 128 0.8 0.2 0.5 0.2 0.1 0.11 \; \$1-wt2
 normalize;
-#X msg 563 568 \; \$1-wt1 sinesum 128 1 0.1 0.2 0.03 \; \$1-wt1 normalize
+#X msg 482 794 \; \$1-wt1 sinesum 128 1 0.1 0.2 0.03 \; \$1-wt1 normalize
 ;
-#X obj 677 457 loadbang;
+#X obj 596 683 loadbang;
 #X obj 195 700 *~ 0.5;
 #X obj 209 753 outlet~;
 #X obj 772 26 inlet;
 #X floatatom 134 622 5 0 0 0 - - - 0;
+#X obj 759 90 random 100;
+#X obj 759 114 / 100;
+#X floatatom 759 138 5 0 0 0 - - - 0;
+#X obj 731 68 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 679 22 loadbang;
+#X obj 599 476 phasor~;
+#X obj 596 430 r \$0-nin;
+#X obj 599 507 expr~ -1+(2*$v1);
+#X obj 600 551 *~ 0.4;
 #X connect 1 0 3 0;
 #X connect 2 0 8 0;
 #X connect 3 0 2 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
-#X connect 8 0 36 0;
-#X connect 9 0 36 0;
+#X connect 8 0 30 0;
+#X connect 9 0 30 0;
 #X connect 10 0 8 1;
-#X connect 10 0 39 0;
+#X connect 10 0 33 0;
 #X connect 11 0 9 1;
 #X connect 12 0 13 0;
 #X connect 12 0 14 0;
-#X connect 13 0 26 0;
+#X connect 13 0 21 0;
 #X connect 14 0 15 0;
-#X connect 15 0 27 0;
+#X connect 15 0 22 0;
 #X connect 16 0 17 0;
-#X connect 17 0 12 0;
-#X connect 18 0 17 0;
-#X connect 19 0 18 0;
-#X connect 20 0 16 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 24 0 1 0;
-#X connect 25 0 5 0;
-#X connect 28 0 19 0;
-#X connect 29 0 34 0;
-#X connect 30 0 29 0;
-#X connect 31 0 33 0;
-#X connect 32 0 31 0;
-#X connect 35 0 30 0;
-#X connect 35 0 32 0;
-#X connect 36 0 37 0;
-#X connect 38 0 20 0;
+#X connect 17 0 18 0;
+#X connect 19 0 1 0;
+#X connect 20 0 5 0;
+#X connect 23 0 28 0;
+#X connect 24 0 23 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 29 0 24 0;
+#X connect 29 0 26 0;
+#X connect 30 0 31 0;
+#X connect 32 0 37 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 12 0;
+#X connect 37 0 34 0;
+#X connect 38 0 37 0;
+#X connect 39 0 41 0;
+#X connect 40 0 39 0;
+#X connect 41 0 42 0;
+#X connect 42 0 30 0;
