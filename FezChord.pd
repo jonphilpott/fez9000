@@ -1,4 +1,4 @@
-#N canvas 321 25 1210 829 12;
+#N canvas 20 156 1210 829 12;
 #X obj 119 57 inlet;
 #X obj 119 118 s \$0-key;
 #X text 19 20 inversion 1: 0/3 3/4 4/4 2/5;

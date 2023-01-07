@@ -1,4 +1,4 @@
-#N canvas 166 117 509 605 12;
+#N canvas 2401 274 509 605 12;
 #X obj 171 261 Scaler;
 #X floatatom 172 342 5 0 0 0 - - - 0;
 #X obj 171 392 FezFM;
@@ -11,15 +11,15 @@
 #X obj 56 253 inlet;
 #X obj 322 52 inlet;
 #X obj 322 76 s \$0-r;
-#X obj 269 504 r \$0-r;
-#X obj 271 437 loadbang;
-#X obj 270 461 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 299 441 r \$0-r;
+#X obj 301 374 loadbang;
+#X obj 300 398 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 406 37 inlet;
 #X obj 399 75 s \$0-fms;
-#X obj 264 575 outlet~;
-#X msg 269 481 1;
-#X msg 309 479 80;
+#X obj 294 512 outlet~;
+#X msg 299 418 1;
+#X msg 339 416 80;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
